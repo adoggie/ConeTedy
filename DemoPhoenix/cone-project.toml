@@ -1,0 +1,62 @@
+
+
+project_name="DemoPhoenix"
+author = "scott"
+date = "2021/7/30"
+
+[task_exec]
+entry = "main.computating"
+
+[task.params]
+period = 12
+kb =10.1
+
+[task_split]
+entry= "main.task_split"
+workers = 10        # 最大启用10个工人 ， 默认： 0 ，无限制
+
+[task_split.params]
+factor = 100
+values = [1,2,3]
+
+[task_result]
+# 任务结果聚合
+type = "mongodb"
+host = '127.0.0.1'
+port =  27017
+db = 'Phoenix'
+
+
+[task_result.reducer]
+entry = "DemoPhoenix.main.result_reduce"
+
+
+[data_deploy]
+# 项目数据部署
+entry = "main.data_deploy"
+period = '*/5 * * * *' # crontab 格式的触发周期
+
+[data_deploy.params]
+data_dir='/data'
+
+[project_deploy]
+# 项目代码被部署到node之后触发
+entry = "main.project_deploy"
+
+[[nodes]]
+name = 'node1'
+workers = 10
+
+#[[nodes]]
+#name = 'node2'
+#workers = 10
+
+
+[dependencies]
+package = ['redis-server']
+pip = ['fire','pymongo','pyzmq']
+
+
+
+#
+#

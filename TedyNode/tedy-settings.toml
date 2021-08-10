@@ -1,0 +1,14 @@
+name = "node1"
+ip = "p10"
+port = 19010
+user = "dcp"
+data_dir = "/home/dcp/conetedy/data"
+repo_dir = "/home/dcp/conetedy/repo"
+node_dir = "/home/dcp/conetedy"
+rpc_port = 5000
+workers = 40
+python = "/home/dcp/anaconda3/bin/python"
+
+[NoSQL]
+host = "p10"
+port = 19800

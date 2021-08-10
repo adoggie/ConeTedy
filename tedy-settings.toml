@@ -1,0 +1,14 @@
+# 此处无用配置
+
+[NoSQL]
+host = '127.0.0.1'
+port =  27017
+
+
+[Master]
+rpc_addr = 'localhost:9101'
+credential=''
+
+
+#[[Nodes]]
+#ip='12'

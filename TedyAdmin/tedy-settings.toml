@@ -1,0 +1,27 @@
+
+[NoSQL]
+#host = '127.0.0.1'
+#port =  27017
+#host = "192.168.30.21"
+#port =  27018
+host = "p10"
+port =  19800
+
+
+[default]
+repo_dir = '/home/scott/projects/ConeTedy'
+#repo_dir = '/Users/scott/Desktop/Projects/EL/ConeTedy'
+
+[[nodes]]
+name= 'node1'
+#ip = '192.168.30.21'
+ip = 'p10'
+port = 19010
+user = 'dcp' # nakeddance
+data_dir = '/home/dcp/conetedy/data'
+repo_dir = '/home/dcp/conetedy/repo'
+node_dir = '/home/dcp/conetedy'
+rpc_port = 5000
+workers = 40
+python = '/home/dcp/anaconda3/bin/python'
+
